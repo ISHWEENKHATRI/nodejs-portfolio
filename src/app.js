@@ -3,6 +3,7 @@ const hbs=require("hbs");
 const app=express();
 const mongoose=require('mongoose');
 const Details=require('./models/details.js')
+const Slider=require('./models/slider');
 const routes=require('./routes/main');
 
 app.use(express.static("public"));
@@ -17,6 +18,20 @@ hbs.registerPartials("views/partials")
 mongoose.connect("mongodb://localhost/nodejs_portfolio")
     .then(()=>{
         console.log("Database Connected");
+        // Slider.create(
+        //     [
+        //         {
+        //             imageUrl:"/images/s1.png"
+        //         },
+        //         {
+        //             imageUrl:"/images/s2.png"
+        //         },
+        //         {
+        //             imageUrl:"/images/s3.png"
+        //         }     
+        //     ]
+        // )
+        
         // Details.create(
         //     {
         //         brandName:"Portfolio",
