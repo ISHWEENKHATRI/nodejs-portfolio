@@ -4,6 +4,7 @@ const app=express();
 const mongoose=require('mongoose');
 const Details=require('./models/details.js')
 const Slider=require('./models/slider');
+const Service=require("./models/service.js")
 const routes=require('./routes/main');
 
 app.use(express.static("public"));
@@ -18,6 +19,47 @@ hbs.registerPartials("views/partials")
 mongoose.connect("mongodb://localhost/nodejs_portfolio")
     .then(()=>{
         console.log("Database Connected");
+        // Service.create(
+        //     [
+        //     {
+        //         icon:'fa-solid fa-code',
+        //         title:'Website Development',
+        //         linkText:'View more',
+        //         linkUrl:'#'
+        //     },
+        //     {
+        //         icon:'fa-solid fa-code',
+        //         title:'College Projects',
+        //         linkText:'View more',
+        //         linkUrl:'#'
+        //     },
+        //     {
+        //         icon:'fa-solid fa-code',
+        //         title:'Graphic Desiging',
+        //         linkText:'View more',
+        //         linkUrl:'#'
+        //     },
+        //     {
+        //         icon:'fa-solid fa-code',
+        //         title:'App Development',
+        //         linkText:'View more',
+        //         linkUrl:'#'
+        //     },
+        //     {
+        //         icon:'fa-solid fa-code',
+        //         title:'IoT Projects',
+        //         linkText:'View more',
+        //         linkUrl:'#'
+        //     },
+        //     {
+        //         icon:'fa-solid fa-code',
+        //         title:'SEO Optimization',
+        //         linkText:'View more',
+        //         linkUrl:'#'
+        //     },
+        // ]
+        // )
+        
         // Slider.create(
         //     [
         //         {

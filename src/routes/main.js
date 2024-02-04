@@ -1,15 +1,18 @@
 const express=require('express');
 const Detail=require("../models/details.js")
 const Slider=require('../models/slider.js')
+const Service=require('../models/service.js')
+
 const routes=express.Router();
 
 routes.get("/", async (req,res)=>{
     const details= await Detail.findOne({"_id":"65be86cef1fce20c6a392d95"})
-    const slides= await Slider.find()
-    // console.log(details);
+    const slides= await Slider.find();
+    const services=await Service.find();
     res.render("index",{
         details:details,
-        slides:slides
+        slides:slides,
+        services:services
     });
 })
 routes.get("/gallery",async(req,res)=>{
