@@ -10,7 +10,6 @@
   <body>
     {{>navbar data=details}}
     {{>slider slides=slides}}
-   
     {{!-- Services Section --}}
     <section id="services_section" class="py-3">
         <div class="container">
@@ -34,6 +33,51 @@
         </div>
         </div>
     </section>
+    {{!-- Contact us Section start--}}
+<section id="contact_us_section">
+<div class="container">
+<h1 class="text-center text-secondary">Contact Us</h1>
+<form action="/contact-form" method="post" class="row g-3 py-3 border rounded mt-3 form-background shadow-lg p-3 mb-5 bg-white">
+  <div class="col-md-4">
+    <label for="Name" class="form-label">Name</label>
+    <input type="text" class="form-control" name="name">
+  </div>
+  <div class="col-md-4">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email">
+  </div>
+  <div class="col-md-4">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" name="phone">
+  </div> 
+  <div class="col-md-6">
+      <label for="city" class="form-label">City</label>
+      <input type="text" class="form-control" name="city">
+  </div>
+  <div class="col-md-4">
+      <label for="state" class="form-label">State</label>
+      <input type="text" class="form-control" name="state">
+    {{!-- <select id="inputState" class="form-select">
+      <option selected>Choose...</option>
+      <option>...</option>
+    </select> --}}
+  </div>
+  <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" name="zip">
+  </div>
+  <div class="col-12">
+    <label for="message" class="form-label">Message</label>
+    <textarea type="text" class="form-control" name="message" placeholder="Type your message here..."></textarea>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn submitbtn">Submit</button>
+  </div>
+</form>
+</div>
+</section>
+<br>
+    {{!-- Contact us Section end--}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/08e9928e48.js" crossorigin="anonymous"></script>
   </body>

@@ -5,10 +5,15 @@ const mongoose=require('mongoose');
 const Details=require('./models/details.js')
 const Slider=require('./models/slider');
 const Service=require("./models/service.js")
+const bodyParser=require('body-parser');
 const routes=require('./routes/main');
 
+app.use(bodyParser.urlencoded({
+    extended:true
+}))
 app.use(express.static("public"));
 app.use('',routes);
+
 
 //(template engine)
 app.set('view engine','hbs');
