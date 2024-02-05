@@ -3,6 +3,7 @@ const Detail=require("../models/details.js")
 const Slider=require('../models/slider.js')
 const Service=require('../models/service.js')
 const Contact=require('../models/contact.js');
+const Gallery=require('../models/gallery.js')
 const routes=express.Router();
 
 routes.get("/", async (req,res)=>{
@@ -17,8 +18,10 @@ routes.get("/", async (req,res)=>{
 })
 routes.get("/gallery",async(req,res)=>{
     const details= await Detail.findOne({"_id":"65be86cef1fce20c6a392d95"})
+    const gallery= await Gallery.find();
     res.render("gallery",{
-        details:details
+        details:details,
+        gallery:gallery
     });
 })
 
