@@ -25,6 +25,12 @@ routes.get("/gallery",async(req,res)=>{
     });
 })
 
+routes.get("/about",async(req,res)=>{
+    const details= await Detail.findOne({"_id":"65be86cef1fce20c6a392d95"})
+    res.render("about",{
+        details:details
+    });
+})
 routes.post("/contact-form", async (req,res)=>{
     // console.log(req.body);
     //save the data in db
